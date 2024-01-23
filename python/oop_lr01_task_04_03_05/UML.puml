@@ -1,0 +1,31 @@
+@startuml
+
+class Time {
+    - hours: int
+    - minutes: int
+    - seconds: int
+    + __init__(hours: int, minutes: int, seconds: int)
+    + __str__(): str
+    + __add__(other: Time): Time
+    + __sub__(other: Time): Time
+    + from_string(str_value: str): Time
+    + save(filename: str)
+    + load(filename: str): Time
+    - validate_time()
+    - convert_to_seconds(): int
+    - adjust_time()
+    + from_seconds(seconds: int): Time
+}
+
+class TimeCollection {
+    - _data: list
+    + __init__()
+    + __str__(): str
+    + __getitem__(index: int): Time
+    + add(value: Time)
+    + remove(index: int)
+    + save(filename: str)
+    + load(filename: str)
+}
+
+@enduml

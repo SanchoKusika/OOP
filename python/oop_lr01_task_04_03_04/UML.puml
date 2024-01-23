@@ -1,0 +1,19 @@
+@startuml
+class Time {
+    - hours: int
+    - minutes: int
+    - seconds: int
+
+    + __init__(hours: int, minutes: int, seconds: int)
+    + __str__(): string
+    + __add__(other: Time): Time
+    + __sub__(other: Time): Time
+    + from_string(str_value: string): Time
+    + save(filename: string)
+    + load(filename: string): Time
+    + validate_time()
+    + convert_to_seconds(): int
+    + adjust_time()
+    + from_seconds(seconds: int): Time
+}
+@enduml
